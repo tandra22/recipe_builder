@@ -1,75 +1,47 @@
-<!-- Form pantry start -->
 <form action="/create_pantry_from_category" method="post">
-<!-- Form pantry end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @pantry.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for item_id start -->
   <div class="form-group">
     <label for="item_id">
       Item
     </label>
 
-    <!-- Input for item_id start -->
     <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :name, @pantry.item_id), :class => "form-control") %>
-    <!-- Input for item_id end -->
   </div>
-  <!-- Label and input for item_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for available_flag start -->
   <div class="form-group">
     <label for="available_flag">
       Available flag
     </label>
-    <!-- Input for available_flag start -->
     <input id="available_flag" class="form-check-input" name="available_flag" type="checkbox" <%= "checked" if @pantry.available_flag %>>
-    <!-- Input for available_flag end -->
   </div>
 
-  <!-- Label and input for quantity_available start -->
   <div class="form-group">
     <label for="quantity_available">
       Quantity available
     </label>
 
-    <!-- Input for quantity_available start -->
     <input type="text" id="quantity_available" name="quantity_available" class="form-control" value="<%= @pantry.quantity_available %>">
-    <!-- Input for quantity_available end -->
   </div>
-  <!-- Label and input for quantity_available end -->
 
-  <!-- Label and input for category_id start -->
-  <!-- Input for category_id start -->
   <input type="hidden" name="category_id" value="<%= @category.id %>">
-  <!-- Input for category_id end -->
 
-  <!-- Label and input for expiration_date start -->
   <div class="form-group">
     <label for="expiration_date">
       Expiration date
     </label>
 
-    <!-- Input for expiration_date start -->
     <input type="text" id="expiration_date" name="expiration_date" class="form-control" value="<%= @pantry.expiration_date %>">
-    <!-- Input for expiration_date end -->
   </div>
-  <!-- Label and input for expiration_date end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create pantry

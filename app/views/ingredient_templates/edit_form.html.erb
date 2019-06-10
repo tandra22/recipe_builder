@@ -4,80 +4,55 @@
 
 <hr>
 
-<!-- Form ingredient start -->
 <form action="/update_ingredient/<%= @ingredient.id %>" method="post">
-<!-- Form ingredient end -->
 
-  <!-- Label and input for essential_flag start -->
   <div class="form-check">
     <input type="hidden" value="0" name="essential_flag">
-    <!-- Input for essential_flag start -->
     <input id="essential_flag" class="form-check-input" name="essential_flag" type="checkbox" value="1" <%= "checked" if @ingredient.essential_flag %>>
-    <!-- Input for essential_flag end -->
     <label for="essential_flag" class="form-check-label">
       Essential flag
     </label>
   </div>
 
-  <!-- Label and input for quantity start -->
   <div class="form-group">
     <label for="quantity">
       Quantity
     </label>
 
-    <!-- Input for quantity start -->
     <input type="text" id="quantity" name="quantity" class="form-control" value="<%= @ingredient.quantity %>">
-    <!-- Input for quantity end -->
   </div>
-  <!-- Label and input for quantity end -->
 
-  <!-- Label and input for measurement_units start -->
   <div class="form-group">
     <label for="measurement_units">
       Measurement units
     </label>
 
-    <!-- Input for measurement_units start -->
     <input type="text" id="measurement_units" name="measurement_units" class="form-control" value="<%= @ingredient.measurement_units %>">
-    <!-- Input for measurement_units end -->
   </div>
-  <!-- Label and input for measurement_units end -->
 
-  <!-- Label and input for item_id start -->
   <div class="form-group">
     <label for="item_id">
       Item
     </label>
 
-    <!-- Input for item_id start -->
     <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :name, @ingredient.item_id), :class => "form-control") %>
-    <!-- Input for item_id end -->
   </div>
-  <!-- Label and input for item_id end -->
 
-  <!-- Label and input for recipe_id start -->
   <div class="form-group">
     <label for="recipe_id">
       Recipe
     </label>
 
-    <!-- Input for recipe_id start -->
     <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :source_website, @ingredient.recipe_id), :class => "form-control") %>
-    <!-- Input for recipe_id end -->
   </div>
-  <!-- Label and input for recipe_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @ingredient.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update ingredient

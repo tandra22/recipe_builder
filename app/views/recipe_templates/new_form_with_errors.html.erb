@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @recipe.present? %>
   <% if @recipe.errors.any? %>
     <% @recipe.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form recipe start -->
 <form action="/create_recipe" method="post">
-<!-- Form recipe end -->
 
-  <!-- Label and input for source_website start -->
   <div class="form-group">
     <label for="source_website">
       Source website
     </label>
 
-    <!-- Input for source_website start -->
     <input type="text" id="source_website" name="source_website" class="form-control" value="<%= @recipe.source_website %>">
-    <!-- Input for source_website end -->
   </div>
-  <!-- Label and input for source_website end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @recipe.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create recipe

@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link ingredient start -->
       <div class="col">
         <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit ingredient
         </a>
       </div>
-      <!-- Edit link ingredient end -->
 
-      <!-- Delete link ingredient start -->
       <div class="col">
         <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-block btn-outline-secondary">
           Delete ingredient
         </a>
       </div>
-      <!-- Delete link ingredient end -->
     </div>
 
     <dl>
       <dt>
         Essential flag
       </dt>
-      <!-- Display essential_flag start -->
       <dd>
         <%= @ingredient.essential_flag %>
       </dd>
-      <!-- Display essential_flag end -->
 
       <dt>
         Quantity
       </dt>
-      <!-- Display quantity start -->
       <dd>
         <%= @ingredient.quantity %>
       </dd>
-      <!-- Display quantity end -->
 
       <dt>
         Measurement units
       </dt>
-      <!-- Display measurement_units start -->
       <dd>
         <%= @ingredient.measurement_units %>
       </dd>
-      <!-- Display measurement_units end -->
 
       <dt>
         Item
       </dt>
-      <!-- Display item_id start -->
       <dd>
         <% if @ingredient.ingredient.present? %>
           <a href="/items/<%= @ingredient.item_id %>">
@@ -67,12 +56,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display item_id end -->
 
       <dt>
         Recipe
       </dt>
-      <!-- Display recipe_id start -->
       <dd>
         <% if @ingredient.recipe.present? %>
           <a href="/recipes/<%= @ingredient.recipe_id %>">
@@ -80,37 +67,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipe_id end -->
 
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @ingredient.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@ingredient.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

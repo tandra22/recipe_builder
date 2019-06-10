@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @category.pantries.each do |pantry| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/pantries/<%= pantry.id %>">
           <%= pantry.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == pantry.user %>
           <a href="/delete_pantry_from_category/<%= pantry.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="category_pantries_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "category_templates/category_pantries_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

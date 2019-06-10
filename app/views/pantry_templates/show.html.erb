@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link pantry start -->
       <div class="col">
         <% if current_user == @pantry.user %>
           <a href="/pantries/<%= @pantry.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link pantry end -->
 
-      <!-- Delete link pantry start -->
       <div class="col">
         <% if current_user == @pantry.user %>
           <a href="/delete_pantry/<%= @pantry.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link pantry end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @pantry.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Item
       </dt>
-      <!-- Display item_id start -->
       <dd>
         <% if @pantry.ingredient.present? %>
           <a href="/items/<%= @pantry.item_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display item_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @pantry.user.present? %>
           <a href="/users/<%= @pantry.user_id %>">
@@ -66,30 +57,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Available flag
       </dt>
-      <!-- Display available_flag start -->
       <dd>
         <%= @pantry.available_flag %>
       </dd>
-      <!-- Display available_flag end -->
 
       <dt>
         Quantity available
       </dt>
-      <!-- Display quantity_available start -->
       <dd>
         <%= @pantry.quantity_available %>
       </dd>
-      <!-- Display quantity_available end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @pantry.category.present? %>
           <a href="/categories/<%= @pantry.category_id %>">
@@ -97,37 +82,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Expiration date
       </dt>
-      <!-- Display expiration_date start -->
       <dd>
         <%= @pantry.expiration_date %>
       </dd>
-      <!-- Display expiration_date end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@pantry.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@pantry.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @category.errors.any? %>
   <% @category.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form category start -->
 <form action="/update_category/<%= @category.id %>" method="post">
-<!-- Form category end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @category.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for ingredient_id start -->
   <div class="form-group">
     <label for="ingredient_id">
       Ingredient
     </label>
 
-    <!-- Input for ingredient_id start -->
     <%= select_tag(:ingredient_id, options_from_collection_for_select(Item.all, :id, :name, @category.ingredient_id), :class => "form-control") %>
-    <!-- Input for ingredient_id end -->
   </div>
-  <!-- Label and input for ingredient_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update category
