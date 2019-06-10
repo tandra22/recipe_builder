@@ -13,17 +13,21 @@
 
       <!-- Edit link pantry start -->
       <div class="col">
-        <a href="/pantries/<%= @pantry.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit pantry
-        </a>
+        <% if current_user == @pantry.user %>
+          <a href="/pantries/<%= @pantry.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit pantry
+          </a>
+        <% end %>
       </div>
       <!-- Edit link pantry end -->
 
       <!-- Delete link pantry start -->
       <div class="col">
-        <a href="/delete_pantry/<%= @pantry.id %>" class="btn btn-block btn-outline-secondary">
-          Delete pantry
-        </a>
+        <% if current_user == @pantry.user %>
+          <a href="/delete_pantry/<%= @pantry.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete pantry
+          </a>
+        <% end %>
       </div>
       <!-- Delete link pantry end -->
     </div>

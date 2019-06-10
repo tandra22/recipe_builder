@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_pantry_from_ingredient/<%= pantry.id %>">
-          Delete
-        </a>
+        <%if current_user == pantry.user %>
+          <a href="/delete_pantry_from_item/<%= pantry.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
