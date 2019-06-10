@@ -63,6 +63,30 @@ class PantriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_ingredient
+    @pantry = Pantry.find(params.fetch("id_to_remove"))
+
+    @pantry.destroy
+
+    redirect_to("/items/#{@pantry.item_id}", notice: "Pantry deleted successfully.")
+  end
+
+  def destroy_row_from_category
+    @pantry = Pantry.find(params.fetch("id_to_remove"))
+
+    @pantry.destroy
+
+    redirect_to("/categories/#{@pantry.category_id}", notice: "Pantry deleted successfully.")
+  end
+
+  def destroy_row_from_user
+    @pantry = Pantry.find(params.fetch("id_to_remove"))
+
+    @pantry.destroy
+
+    redirect_to("/users/#{@pantry.user_id}", notice: "Pantry deleted successfully.")
+  end
+
   def destroy_row
     @pantry = Pantry.find(params.fetch("id_to_remove"))
 
