@@ -36,6 +36,44 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def create_row_from_item
+    @ingredient = Ingredient.new
+
+    @ingredient.essential_flag = params.fetch("essential_flag")
+    @ingredient.quantity = params.fetch("quantity")
+    @ingredient.measurement_units = params.fetch("measurement_units")
+    @ingredient.item_id = params.fetch("item_id")
+    @ingredient.recipe_id = params.fetch("recipe_id")
+    @ingredient.name = params.fetch("name")
+
+    if @ingredient.valid?
+      @ingredient.save
+
+      redirect_to("/items/#{@ingredient.item_id}", notice: "Ingredient created successfully.")
+    else
+      render("ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_recipe
+    @ingredient = Ingredient.new
+
+    @ingredient.essential_flag = params.fetch("essential_flag")
+    @ingredient.quantity = params.fetch("quantity")
+    @ingredient.measurement_units = params.fetch("measurement_units")
+    @ingredient.item_id = params.fetch("item_id")
+    @ingredient.recipe_id = params.fetch("recipe_id")
+    @ingredient.name = params.fetch("name")
+
+    if @ingredient.valid?
+      @ingredient.save
+
+      redirect_to("/recipes/#{@ingredient.recipe_id}", notice: "Ingredient created successfully.")
+    else
+      render("ingredient_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @ingredient = Ingredient.find(params.fetch("prefill_with_id"))
 

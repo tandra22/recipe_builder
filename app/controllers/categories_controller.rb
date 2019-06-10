@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @pantry = Pantry.new
     @category = Category.find(params.fetch("id_to_display"))
 
     render("category_templates/show.html.erb")
@@ -27,6 +28,21 @@ class CategoriesController < ApplicationController
       @category.save
 
       redirect_back(:fallback_location => "/categories", :notice => "Category created successfully.")
+    else
+      render("category_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_item
+    @category = Category.new
+
+    @category.name = params.fetch("name")
+    @category.ingredient_id = params.fetch("ingredient_id")
+
+    if @category.valid?
+      @category.save
+
+      redirect_to("/items/#{@category.ingredient_id}", notice: "Category created successfully.")
     else
       render("category_templates/new_form_with_errors.html.erb")
     end

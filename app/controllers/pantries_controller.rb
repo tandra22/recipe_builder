@@ -37,6 +37,46 @@ class PantriesController < ApplicationController
     end
   end
 
+  def create_row_from_item
+    @pantry = Pantry.new
+
+    @pantry.name = params.fetch("name")
+    @pantry.item_id = params.fetch("item_id")
+    @pantry.user_id = params.fetch("user_id")
+    @pantry.available_flag = params.fetch("available_flag")
+    @pantry.quantity_available = params.fetch("quantity_available")
+    @pantry.category_id = params.fetch("category_id")
+    @pantry.expiration_date = params.fetch("expiration_date")
+
+    if @pantry.valid?
+      @pantry.save
+
+      redirect_to("/items/#{@pantry.item_id}", notice: "Pantry created successfully.")
+    else
+      render("pantry_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @pantry = Pantry.new
+
+    @pantry.name = params.fetch("name")
+    @pantry.item_id = params.fetch("item_id")
+    @pantry.user_id = params.fetch("user_id")
+    @pantry.available_flag = params.fetch("available_flag")
+    @pantry.quantity_available = params.fetch("quantity_available")
+    @pantry.category_id = params.fetch("category_id")
+    @pantry.expiration_date = params.fetch("expiration_date")
+
+    if @pantry.valid?
+      @pantry.save
+
+      redirect_to("/categories/#{@pantry.category_id}", notice: "Pantry created successfully.")
+    else
+      render("pantry_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @pantry = Pantry.find(params.fetch("prefill_with_id"))
 

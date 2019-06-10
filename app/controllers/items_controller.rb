@@ -6,6 +6,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @category = Category.new
+    @pantry = Pantry.new
+    @ingredient = Ingredient.new
     @item = Item.find(params.fetch("id_to_display"))
 
     render("item_templates/show.html.erb")

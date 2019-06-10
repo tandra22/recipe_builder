@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/categories/new", { :controller => "categories", :action => "new_form" })
   post("/create_category", { :controller => "categories", :action => "create_row" })
+  post("/create_category_from_item", { :controller => "categories", :action => "create_row_from_item" })
 
   # READ
   get("/categories", { :controller => "categories", :action => "index" })
@@ -36,6 +37,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/pantries/new", { :controller => "pantries", :action => "new_form" })
   post("/create_pantry", { :controller => "pantries", :action => "create_row" })
+  post("/create_pantry_from_category", { :controller => "pantries", :action => "create_row_from_category" })
+  post("/create_pantry_from_item", { :controller => "pantries", :action => "create_row_from_item" })
 
   # READ
   get("/pantries", { :controller => "pantries", :action => "index" })
@@ -77,6 +80,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/ingredients/new", { :controller => "ingredients", :action => "new_form" })
   post("/create_ingredient", { :controller => "ingredients", :action => "create_row" })
+  post("/create_ingredient_from_recipe", { :controller => "ingredients", :action => "create_row_from_recipe" })
+  post("/create_ingredient_from_item", { :controller => "ingredients", :action => "create_row_from_item" })
 
   # READ
   get("/ingredients", { :controller => "ingredients", :action => "index" })
