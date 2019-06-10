@@ -84,13 +84,21 @@
 
         <!-- Display pantry.item_id start -->
         <td>
-          <%= pantry.ingredient.name %>
+          <% if pantry.ingredient.present? %>
+            <a href="/items/<%= pantry.ingredient.id %>">
+              <%= pantry.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pantry.item_id end -->
 
         <!-- Display pantry.user_id start -->
         <td>
-          <%= pantry.user.email %>
+          <% if pantry.user.present? %>
+            <a href="/users/<%= pantry.user.id %>">
+              <%= pantry.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pantry.user_id end -->
 
@@ -108,7 +116,11 @@
 
         <!-- Display pantry.category_id start -->
         <td>
-          <%= pantry.category.name %>
+          <% if pantry.category.present? %>
+            <a href="/categories/<%= pantry.category.id %>">
+              <%= pantry.category.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pantry.category_id end -->
 

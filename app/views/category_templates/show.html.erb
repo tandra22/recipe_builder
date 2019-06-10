@@ -43,7 +43,11 @@
       </dt>
       <!-- Display ingredient_id start -->
       <dd>
-        <%= @category.ingredient_id %>
+        <% if @category.ingredient.present? %>
+          <a href="/items/<%= @category.ingredient_id %>">
+            <%= @category.ingredient.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display ingredient_id end -->
 

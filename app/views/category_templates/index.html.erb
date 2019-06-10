@@ -64,7 +64,11 @@
 
         <!-- Display category.ingredient_id start -->
         <td>
-          <%= category.ingredient.name %>
+          <% if category.ingredient.present? %>
+            <a href="/items/<%= category.ingredient.id %>">
+              <%= category.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display category.ingredient_id end -->
 

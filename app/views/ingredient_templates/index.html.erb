@@ -92,13 +92,21 @@
 
         <!-- Display ingredient.item_id start -->
         <td>
-          <%= ingredient.ingredient.name %>
+          <% if ingredient.ingredient.present? %>
+            <a href="/items/<%= ingredient.ingredient.id %>">
+              <%= ingredient.ingredient.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ingredient.item_id end -->
 
         <!-- Display ingredient.recipe_id start -->
         <td>
-          <%= ingredient.recipe.source_website %>
+          <% if ingredient.recipe.present? %>
+            <a href="/recipes/<%= ingredient.recipe.id %>">
+              <%= ingredient.recipe.source_website %>
+            </a>
+          <% end %>
         </td>
         <!-- Display ingredient.recipe_id end -->
 
