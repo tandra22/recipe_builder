@@ -10,7 +10,8 @@ class PantriesController < ApplicationController
   end
 
   def index
-    @pantries = Pantry.page(params[:page]).per(10)
+    @q = Pantry.ransack(params[:q])
+    @pantries = @q.result(:distinct => true).includes(:ingredient, :category, :user).page(params[:page]).per(10)
 
     render("pantry_templates/index.html.erb")
   end
