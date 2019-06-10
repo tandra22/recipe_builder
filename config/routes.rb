@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Pantry resource:
+
+  # CREATE
+  get("/pantries/new", { :controller => "pantries", :action => "new_form" })
+  post("/create_pantry", { :controller => "pantries", :action => "create_row" })
+
+  # READ
+  get("/pantries", { :controller => "pantries", :action => "index" })
+  get("/pantries/:id_to_display", { :controller => "pantries", :action => "show" })
+
+  # UPDATE
+  get("/pantries/:prefill_with_id/edit", { :controller => "pantries", :action => "edit_form" })
+  post("/update_pantry/:id_to_modify", { :controller => "pantries", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pantry/:id_to_remove", { :controller => "pantries", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Recipe resource:
 
   # CREATE

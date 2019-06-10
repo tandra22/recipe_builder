@@ -1,0 +1,104 @@
+<h1>
+  Add a new pantry
+</h1>
+
+
+<hr>
+
+<!-- Form pantry start -->
+<form action="/create_pantry" method="post">
+<!-- Form pantry end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for item_id start -->
+  <div class="form-group">
+    <label for="item_id">
+      Item
+    </label>
+
+    <!-- Input for item_id start -->
+    <input type="text" id="item_id" name="item_id" class="form-control">
+    <!-- Input for item_id end -->
+  </div>
+  <!-- Label and input for item_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for available_flag start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="available_flag">
+    <!-- Input for available_flag start -->
+    <input id="available_flag" class="form-check-input" name="available_flag" type="checkbox">
+    <!-- Input for available_flag end -->
+    <label for="available_flag" class="form-check-label">
+      Available flag
+    </label>
+  </div>
+
+  <!-- Label and input for quantity_available start -->
+  <div class="form-group">
+    <label for="quantity_available">
+      Quantity available
+    </label>
+
+    <!-- Input for quantity_available start -->
+    <input type="text" id="quantity_available" name="quantity_available" class="form-control">
+    <!-- Input for quantity_available end -->
+  </div>
+  <!-- Label and input for quantity_available end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for expiration_date start -->
+  <div class="form-group">
+    <label for="expiration_date">
+      Expiration date
+    </label>
+
+    <!-- Input for expiration_date start -->
+    <input type="text" id="expiration_date" name="expiration_date" class="form-control">
+    <!-- Input for expiration_date end -->
+  </div>
+  <!-- Label and input for expiration_date end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pantry
+  </button>
+</form>
+
+<hr>
+
+<a href="/pantries">
+  Go back
+</a>
