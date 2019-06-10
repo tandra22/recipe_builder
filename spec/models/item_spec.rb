@@ -4,6 +4,8 @@ RSpec.describe Item, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:recipe_details) }
+
     end
 
     describe "InDirect Associations" do
