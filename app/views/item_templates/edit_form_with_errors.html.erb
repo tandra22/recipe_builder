@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @item.errors.any? %>
+  <% @item.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit item #<%= @item.id %>
+</h1>
+
+<hr>
+
+<!-- Form item start -->
+<form action="/update_item/<%= @item.id %>" method="post">
+<!-- Form item end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @item.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for category start -->
+  <div class="form-group">
+    <label for="category">
+      Category
+    </label>
+
+    <!-- Input for category start -->
+    <input type="text" id="category" name="category" class="form-control" value="<%= @item.category %>">
+    <!-- Input for category end -->
+  </div>
+  <!-- Label and input for category end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update item
+  </button>
+</form>
+
+<hr>
+
+<a href="/items">
+  Go back
+</a>

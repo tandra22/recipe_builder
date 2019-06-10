@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Item #<%= @item.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/items" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link item start -->
+      <div class="col">
+        <a href="/items/<%= @item.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit item
+        </a>
+      </div>
+      <!-- Edit link item end -->
+
+      <!-- Delete link item start -->
+      <div class="col">
+        <a href="/delete_item/<%= @item.id %>" class="btn btn-block btn-outline-secondary">
+          Delete item
+        </a>
+      </div>
+      <!-- Delete link item end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @item.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Category
+      </dt>
+      <!-- Display category start -->
+      <dd>
+        <%= @item.category %>
+      </dd>
+      <!-- Display category end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@item.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@item.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
