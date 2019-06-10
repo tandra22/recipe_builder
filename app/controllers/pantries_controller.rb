@@ -88,7 +88,7 @@ class PantriesController < ApplicationController
 
     @pantry.name = params.fetch("name")
     @pantry.item_id = params.fetch("item_id")
-    @pantry.user_id = params.fetch("user_id")
+    
     @pantry.available_flag = params.fetch("available_flag")
     @pantry.quantity_available = params.fetch("quantity_available")
     @pantry.category_id = params.fetch("category_id")
