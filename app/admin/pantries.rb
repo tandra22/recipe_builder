@@ -1,4 +1,6 @@
 ActiveAdmin.register Pantry do
+
+ permit_params :name, :item_id, :user_id, :available_flag, :quantity_available, :category_id, :expiration_date
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
