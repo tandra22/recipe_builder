@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  has_many   :categories,
+             :foreign_key => "ingredient_id",
+             :dependent => :destroy
+
   has_many   :pantries,
              :dependent => :destroy
 
