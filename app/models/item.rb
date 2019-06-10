@@ -1,6 +1,9 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  has_many   :pantries,
+             :dependent => :destroy
+
   has_many   :recipe_details,
              :class_name => "Ingredient",
              :dependent => :destroy
